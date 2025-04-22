@@ -1,9 +1,41 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 :root {
+  --foreground: #0f0f0f;
+  --muted-foreground: #262626;
+
   --roboto-font: "Roboto", sans-serif;
 }
 
 body {
   font-family: var(--roboto-font);
+}
+
+main {
+  max-width: 794px;
+  margin-inline: auto;
+  padding-block: 2rem;
+}
+
+.header {
+  text-align: center;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--muted-foreground);
+
+  & h1 {
+    font-size: 2rem;
+  }
+
+  & h2 {
+    margin-bottom: 1rem;
+  }
+
+  & ul {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  & li > a {
+    text-decoration: underline;
+  }
 }
