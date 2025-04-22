@@ -11,6 +11,15 @@
 
 body {
   font-family: var(--roboto-font);
+
+  & > a {
+    text-decoration: underline;
+    font-size: 0.75rem;
+    position: sticky;
+    top: 20px;
+    left: 20px;
+    text-decoration: none;
+  }
 }
 
 main {
@@ -107,5 +116,19 @@ main {
       list-style-position: inside;
       margin-left: 1rem;
     }
+  }
+}
+
+.skills {
+  & h2 {
+    font-size: var(--h2-size);
+  }
+
+  & div {
+    margin-bottom: 1rem;
+  }
+
+  & p {
+    font-size: var(--paragraph-size);
   }
 }
