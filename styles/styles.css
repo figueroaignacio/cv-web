@@ -4,6 +4,9 @@
   --foreground: #0f0f0f;
   --muted-foreground: #262626;
   --roboto-font: "Roboto", sans-serif;
+  --h1-size: 2rem;
+  --h2-size: 1.25rem;
+  --paragraph-size: 0.85rem;
 }
 
 body {
@@ -25,11 +28,11 @@ main {
   border-bottom: 1px solid var(--muted-foreground);
 
   & h1 {
-    font-size: 2rem;
+    font-size: var(--h1-size);
   }
 
   & h2 {
-    margin-bottom: 1rem;
+    margin-bottom: var(--h2-size);
   }
 
   & ul {
@@ -43,10 +46,22 @@ main {
   }
 }
 
-.education {
+.about {
   & h2 {
     margin-bottom: 1rem;
-    font-size: 1.25rem;
+    font-size: var(--h2-size);
+  }
+
+  & p {
+    font-size: var(--paragraph-size);
+  }
+}
+
+.education,
+.experience {
+  & h2 {
+    margin-bottom: 1rem;
+    font-size: var(--h2-size);
   }
 
   & > div {
@@ -76,5 +91,21 @@ main {
 
   & article p {
     color: var(--muted-foreground);
+    font-size: var(--paragraph-size);
+  }
+}
+
+.experience {
+  & ul {
+    display: grid;
+    gap: 0.4rem;
+    font-size: var(--paragraph-size);
+    margin-top: 0.5rem;
+    list-style: disc;
+
+    & li {
+      list-style-position: inside;
+      margin-left: 1rem;
+    }
   }
 }
