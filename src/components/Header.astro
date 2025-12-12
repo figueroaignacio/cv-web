@@ -1,0 +1,67 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const contactInfo = {
+  email: "ignaciofigueroadev@gmail.com",
+  phone: "+54 9 11 2806-6862",
+  website: "ignaciofigueroa.vercel.app",
+  github: "github.com/figueroaignacio",
+  linkedin: "linkedin.com/in/figueroa-ignacio",
+  location: "Monte Grande, Buenos Aires",
+};
+---
+
+<header class="w-full">
+  <div class="mx-auto max-w-4xl space-y-3">
+    <div class="text-center">
+      <h1 class="mb-2 text-4xl font-bold tracking-tight md:text-2xl">
+        {t("cv.name")}
+      </h1>
+      <p class="">
+        {t("cv.title")}
+      </p>
+    </div>
+    <div class="mx-auto flex max-w-2xl flex-wrap justify-center gap-x-4">
+      <a
+        href={`mailto:${contactInfo.email}`}
+        class="flex items-center gap-2 text-black"
+      >
+        <span class="truncate">{contactInfo.email}</span>
+      </a>
+      <a
+        href={`tel:${contactInfo.phone}`}
+        class="flex items-center gap-2 text-black"
+      >
+        <span>{t("cv.phone")}: {contactInfo.phone}</span>
+      </a>
+      <a
+        href={`https://${contactInfo.website}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center gap-2 text-black"
+      >
+        <span class="truncate">{contactInfo.website}</span>
+      </a>
+      <a
+        href={`https://${contactInfo.github}`}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span class="truncate">{contactInfo.github}</span>
+      </a>
+      <a
+        href={`https://${contactInfo.linkedin}`}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <span class="truncate">{contactInfo.linkedin}</span>
+      </a>
+      <div>
+        <span>{contactInfo.location}</span>
+      </div>
+    </div>
+  </div>
+</header>

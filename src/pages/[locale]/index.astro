@@ -1,0 +1,21 @@
+---
+// Layout
+import Layout from "../../layouts/Layout.astro";
+
+// Sections
+import Header from "../../components/Header.astro";
+
+// i18n
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+export async function getStaticPaths() {
+  return [{ params: { locale: "es" } }, { params: { locale: "en" } }];
+}
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<Layout title={t("nav.home")}>
+  <Header />
+</Layout>

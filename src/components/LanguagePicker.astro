@@ -1,0 +1,21 @@
+---
+import { languages } from "../i18n/ui";
+import { getLangFromUrl, getLocalizedPath } from "../i18n/utils";
+
+const currentLang = getLangFromUrl(Astro.url);
+const currentPath = Astro.url.pathname.replace(`/${currentLang}`, "") || "/";
+---
+
+<div class="language-picker">
+  {
+    Object.entries(languages).map(([lang, label]) => (
+      <a
+        href={getLocalizedPath(lang, currentPath)}
+        class:list={["lang-link", { active: currentLang === lang }]}
+        aria-label={`Switch to ${label}`}
+      >
+        {label}
+      </a>
+    ))
+  }
+</div>
